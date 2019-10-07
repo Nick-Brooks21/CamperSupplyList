@@ -19,7 +19,7 @@
 -- Table structure for table `camper`
 --
 
-DROP TABLE IF EXISTS `camper`;
+/*DROP TABLE IF EXISTS `camper`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `camper` (
@@ -46,9 +46,9 @@ UNLOCK TABLES;
 -- Table structure for table `food`
 --
 
-DROP TABLE IF EXISTS `food`;
+/*DROP TABLE IF EXISTS `food`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+SET character_set_client = utf8mb4 ;
 CREATE TABLE `food` (
   `foodId` int(11) NOT NULL AUTO_INCREMENT,
   `foodType` varchar(45) DEFAULT NULL,
@@ -75,7 +75,7 @@ UNLOCK TABLES;
 -- Table structure for table `supplies`
 --
 
-DROP TABLE IF EXISTS `supplies`;
+/*DROP TABLE IF EXISTS `supplies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `supplies` (

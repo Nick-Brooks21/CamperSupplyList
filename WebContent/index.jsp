@@ -27,6 +27,8 @@
 	<p>It is our desire that staff and parents become partners to better serve your
 	children. Camp Chippewa is a place for families and we want to do everything 
 	possible to strengthen and support your family. Start below to get your camper started!</p>
-
+	
+	<a href="addCamper.jsp">Register Now!</a>
+	
 </body>
 </html>
