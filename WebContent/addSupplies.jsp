@@ -7,7 +7,7 @@
 <title>Add Some Supplies</title>
 </head>
 <body>
-	<form action = "addFoodServlet" method="post" ><br /><br />  
+	<form action = "addSuppliesServlet" method="post" ><br /><br />  
 		Camping Item: <input type="text" name="supplyItem" ><br /><br />  
 		Quantity: <input type="text" name="supplyQTY" ><br /><br /> 
 		<input type = "submit" value= "AddSupplies" > 

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Camper;
+
 /**
  * Servlet implementation class addCamperServlet
  */
@@ -27,7 +29,17 @@ public class addCamperServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String fName = request.getParameter("fName");
+		String lName = request.getParameter("lName");
+		String camperAge = request.getParameter("age");
+		Integer age = Integer.parseInt(camperAge);
+		
+		Camper c = new Camper(fName, lName, age);
+		CreateCamperHelper cch = new CreateCamperHelper();
+		cch.addCamper(c);
+		
+		getServletContext().getRequestDispatcher("/addFood.jsp").forward(request, response);
+
 	}
 
 	/**

@@ -4,9 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import model.Camper;
-import model.Food;
-import model.Supplies;
+import model.*;
 
 public class CreateCamperHelper {
 

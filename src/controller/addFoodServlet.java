@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Food;
+
 /**
  * Servlet implementation class addFoodServlet
  */
@@ -27,7 +29,16 @@ public class addFoodServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String food = request.getParameter("foodType");
+		String foodQTY = request.getParameter("foodQTY");
+		int quantity = Integer.parseInt(foodQTY);
+		
+		Food f = new Food(food, quantity);
+		CreateCamperHelper cch = new CreateCamperHelper();
+		cch.addFood(f);
+		
+		getServletContext().getRequestDispatcher("/addSupplies.jsp").forward(request, response);
+		
 	}
 
 	/**

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Supplies;
+
 /**
  * Servlet implementation class addSuppliesServlet
  */
@@ -27,8 +29,15 @@ public class addSuppliesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		String item = request.getParameter("supplyItem");
+		String supplyQTY = request.getParameter("supplyQTY");
+		int quantity = Integer.parseInt(supplyQTY);
+		
+		Supplies s = new Supplies(item, quantity);
+		CreateCamperHelper cch = new CreateCamperHelper();
+		cch.addSupplies(s);
+		
+		getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

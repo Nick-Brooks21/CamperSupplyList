@@ -1,8 +1,23 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="supplies")
 public class Supplies {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="supplyId")
+	private int id;
+	@Column(name="supplyItem")
 	private String supplyItem;
+	@Column(name="quantity")
 	private int quantity;
 	
 	public Supplies() {
