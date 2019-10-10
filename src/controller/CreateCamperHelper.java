@@ -46,6 +46,7 @@ public class CreateCamperHelper {
 		em.getTransaction().commit();
 		em.close();
 	}
+<<<<<<< HEAD
 
 	public void updateSupplies(Supplies s) {
 		EntityManager em = emf.createEntityManager();
@@ -61,4 +62,26 @@ public class CreateCamperHelper {
 		List<Camper> camperList = em.createQuery("SELECT c FROM Camper c").getResultList();
 		return camperList;
 	}
+=======
+	
+	public List<Camper> showAllCampers() {
+		EntityManager em = emf.createEntityManager();
+		List<Camper> showCampers = em.createQuery("SELECT c FROM Camper c").getResultList();
+		return showCampers;
+	}
+	
+	public List<Food> showAllFood() {
+		EntityManager em = emf.createEntityManager();
+		List<Food> showFood = em.createQuery("SELECT f FROM Food f").getResultList();
+		return showFood;
+	}
+	
+	public List<Supplies> showAllSupplies() {
+		EntityManager em = emf.createEntityManager();
+		List<Supplies> showSupplies = em.createQuery("SELECT s FROM Supplies s").getResultList();
+		return showSupplies;
+	}
+	
+	
+>>>>>>> 72d3e9fffa291b2f9f9bc43a53a1627ebbe3b0ac
 }
