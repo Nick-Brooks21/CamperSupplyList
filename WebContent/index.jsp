@@ -28,7 +28,15 @@
 	children. Camp Chippewa is a place for families and we want to do everything 
 	possible to strengthen and support your family. Start below to get your camper started!</p>
 	
-	<a href="addCamper.jsp">Register Now!</a>
+	<table>
+		<tr>
+			<td><a href="addCamper.jsp">Register Now!</a></td>
+		</tr>
+		<tr>
+			<td><a href="deleteCamperServlet">Unregister a camper</a></td>
+		</tr>
+	</table>
+
 	
 </body>
 </html>

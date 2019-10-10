@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -33,4 +35,24 @@ public class CreateCamperHelper {
 		em.getTransaction().commit();
 		em.close();
 	}
+	
+	public List<Camper> showAllCampers() {
+		EntityManager em = emf.createEntityManager();
+		List<Camper> showCampers = em.createQuery("SELECT c FROM Camper c").getResultList();
+		return showCampers;
+	}
+	
+	public List<Food> showAllFood() {
+		EntityManager em = emf.createEntityManager();
+		List<Food> showFood = em.createQuery("SELECT f FROM Food f").getResultList();
+		return showFood;
+	}
+	
+	public List<Supplies> showAllSupplies() {
+		EntityManager em = emf.createEntityManager();
+		List<Supplies> showSupplies = em.createQuery("SELECT s FROM Supplies s").getResultList();
+		return showSupplies;
+	}
+	
+	
 }
