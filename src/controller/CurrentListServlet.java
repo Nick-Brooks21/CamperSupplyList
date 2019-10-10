@@ -1,11 +1,15 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.Camper;
 
 /**
  * Servlet implementation class CurrentListServlet
@@ -26,7 +30,9 @@ public class CurrentListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		CreateCamperHelper ch = new CreateCamperHelper();
+		List<Camper> campers = ch.getAllCampers();
+		request.setAttribute("campers", campers);
 		getServletContext().getRequestDispatcher("/currentList.jsp").forward(request, response);
 	}
 

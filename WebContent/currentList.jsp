@@ -9,15 +9,23 @@
 <title>Camping Supplies List</title>
 </head>
 <body>
-	<h1 class="page-title">Camping Supplies List</h1>
+	<h1 class="page-title"><i>Camping Supplies List</i></h1>
 	<table>
-		<c:forEach camper="${requestScope.allCampers}" var="currentCamper">
+		<c:forEach items="${requestScope.campers}" var="currentCamper">
+			<th class="camperName">${currentCamper.firstName}
+				${currentCamper.lastName}</th>
 			<tr>
-				<th class="camperName">Camper Name Here</th>
-				<td class="foodList">Food here</td>
-				<td class="suppliesList">Supplies Here</td>
+				<th class="foodItems">Food:</th>
+				<c:forEach items="${currentCamper.foodList}" var="foodItem">
+					<td class="foodList">${foodItem.foodType}${foodItem.quantity}</td>
+				</c:forEach>
 			</tr>
-
+			<tr>
+				<th class="supplyItems">Supplies:</th>
+				<c:forEach items="${currentCamper.suppliesList}" var="supplyItem">
+					<td class="supplyList">${supplyItem.supplyItem}${supplyItem.quantity}</td>
+				</c:forEach>
+			</tr>
 		</c:forEach>
 	</table>
 	<a class="home" href="index.jsp">Home</a>

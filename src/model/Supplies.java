@@ -19,6 +19,8 @@ public class Supplies {
 	private String supplyItem;
 	@Column(name="quantity")
 	private int quantity;
+	@Column(name="camperId")
+	private int camperId;
 	
 	public Supplies() {
 		super();
