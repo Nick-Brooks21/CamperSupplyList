@@ -33,7 +33,13 @@
 			<td><a href="addCamper.jsp">Register Now!</a></td>
 		</tr>
 		<tr>
-			<td><a href="deleteCamperServlet">Unregister a camper</a></td>
+			<td><a href="unregisterCamperServlet">Unregister a camper</a></td>
+		</tr>
+		<tr>
+			<td><a href="deleteFoodServlet">Delete Food</a></td>
+		</tr>
+		<tr>
+			<td><a href="deleteSuppliesServlet">Delete Supplies</a></td>
 		</tr>
 	</table>
 

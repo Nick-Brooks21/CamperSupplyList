@@ -52,7 +52,5 @@ public class CreateCamperHelper {
 		EntityManager em = emf.createEntityManager();
 		List<Supplies> showSupplies = em.createQuery("SELECT s FROM Supplies s").getResultList();
 		return showSupplies;
-	}
-	
-	
+	}	
 }

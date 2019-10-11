@@ -8,11 +8,10 @@
 <title>Unregister Camper</title>
 <style>
 body {
-	background-color: black;
+	background-color: lightgray;
 }
 
 h3, td {
-	color: lightgray;
 	text-align: center;
 }
 
@@ -23,10 +22,10 @@ table, td {
 </style>
 </head>
 <body>
-	<form>
+	<form method="post" action="deleteCamperServlet">
 	<h3>We are sorry to hear that you no longer want to attend our summer program here at Camp Chippewa. Select your name from the list of 
-	campers below to unregister.</h3>
-		<table>
+	campers below to unregister. Unregistering a camper will also remove the food and supplies they pledged to bring.</h3>
+		<table align="center">
 			<tr>
 				<td></td>
 				<td>Camper ID</td>
@@ -34,17 +33,19 @@ table, td {
 				<td>Last Name</td>
 				<td>Age</td>
 			</tr>
-			<c:forEach items="${requestScope.allCampers}" var="camper">
+			<c:forEach items="${requestScope.allCampers}" var="allCampers">
 			<tr>
 				<td><input type="radio" id="radioSelect" name="radio" /></td>
-				<td>${camper.id}</td>
-				<td>${camper.firstName}</td>
-				<td>${camper.lastName}</td>
-				<td>${camper.age}</td>
+				<td>${allCampers.id}</td>
+				<td>${allCampers.firstName}</td>
+				<td>${allCampers.lastName}</td>
+				<td>${allCampers.age}</td>
 			</tr>
 			</c:forEach>
 		</table>
+		<input type="submit" value="Delete" name="deleteCamper"><br />
 	</form>
-
+	<a href="index.jsp">Home</a>
+	
 </body>
 </html>
