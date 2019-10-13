@@ -47,7 +47,8 @@ public class Supplies {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	
 
+	public int getCamperId() {
+		return camperId;
+	}
 }

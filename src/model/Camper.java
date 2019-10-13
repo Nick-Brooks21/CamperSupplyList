@@ -83,6 +83,10 @@ public class Camper {
 	public List<Food> getFoodList() {
 		return foodList;
 	}
+	
+	public void addFoodToList(Food foodItem) {
+		foodList.add(foodItem);
+	}
 
 	public List<Supplies> getSuppliesList() {
 		return suppliesList;

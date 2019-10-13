@@ -17,13 +17,13 @@
 			<tr>
 				<th class="foodItems">Food:</th>
 				<c:forEach items="${currentCamper.foodList}" var="foodItem">
-					<td class="foodList">${foodItem.foodType}${foodItem.quantity}</td>
+					<td class="foodList">item: ${foodItem.foodType} quantity: ${foodItem.quantity}</td>
 				</c:forEach>
 			</tr>
 			<tr>
 				<th class="supplyItems">Supplies:</th>
 				<c:forEach items="${currentCamper.suppliesList}" var="supplyItem">
-					<td class="supplyList">${supplyItem.supplyItem}${supplyItem.quantity}</td>
+					<td class="supplyList">item: ${supplyItem.supplyItem} quantity: ${supplyItem.quantity}</td>
 				</c:forEach>
 			</tr>
 		</c:forEach>
