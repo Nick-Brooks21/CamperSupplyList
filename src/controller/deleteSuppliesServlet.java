@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.*;
+import model.Supplies;
 
 /**
- * Servlet implementation class deleteCamperServlet
+ * Servlet implementation class deleteSuppliesServlet
  */
-@WebServlet("/deleteCamperServlet")
-public class deleteCamperServlet extends HttpServlet {
+@WebServlet("/deleteSuppliesServlet")
+public class deleteSuppliesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public deleteCamperServlet() {
+    public deleteSuppliesServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,14 @@ public class deleteCamperServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		CreateCamperHelper cch = new CreateCamperHelper();
+		request.setAttribute("allSupplies", cch.showAllSupplies());
+		
+		if(cch.showAllSupplies().isEmpty()) {
+			request.setAttribute("supply", " ");
+		}
+		
+		getServletContext().getRequestDispatcher("/deleteSupplies.jsp").forward(request, response);		
 	}
 
 	/**
@@ -37,18 +44,20 @@ public class deleteCamperServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		UpdateHelper ch = new UpdateHelper();
-		
+		UpdateHelper sh = new UpdateHelper();
+
 		try {
 			Integer tempId = Integer.parseInt(request.getParameter("id"));
-			Camper camperToDelete = ch.searchByCamperId(tempId);
-						
-			ch.deleteCamper(camperToDelete);
-			
+
+			Supplies supplyToDelete = sh.searchBySupplyId(tempId);
+			sh.deleteSupplies(supplyToDelete);
+
 		} catch (NumberFormatException e) {
 			System.out.println("Forgot to click a button");
 		} finally {
 			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 		}
+				
 	}
+
 }
