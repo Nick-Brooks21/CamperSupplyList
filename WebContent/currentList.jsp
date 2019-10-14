@@ -7,51 +7,19 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Camping Supplies List</title>
-<style>
-body {
-	background-color: lightgray;
-}
-
-h3, td {
-	text-align: center;
-}
-
-table, td {
-	border: 1px solid royalblue;
-	padding: 10px;
-}
-.name {
-text-align: center;
-}
-
-</style>
 </head>
 <body>
-	<h1 class="page-title">
-		<i>Camping Supplies List</i>
-	</h1>
-	<c:forEach items="${requestScope.campers}" var="currentCamper">
-		<table align="center">
-			<tr class: "name"><h3>${currentCamper.firstName}  ${currentCamper.lastName}</h3></tr>
-			<th class="foodItems">Food:</th>
-			<c:forEach items="${requestScope.food}" var="foodItem">
-				<tr>
-					<c:if test="${foodItem.camperId == currentCamper.id}">
-						<td>${foodItem.foodType}:${foodItem.quantity}</td>
-					</c:if>
-				</tr>
-			</c:forEach>
-			<th class="supplyItems">Supplies:</th>
-			<c:forEach items="${requestScope.supplies}" var="supplyItem">
-				<tr>
-					<c:if test="${supplyItem.camperId == currentCamper.id}">
-						<td>${supplyItem.supplyItem}:${supplyItem.quantity}</td>
-					</c:if>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:forEach>
+	<h1 class="page-title">Camping Supplies List</h1>
+	<table>
+		<c:forEach camper="${requestScope.allCampers}" var="currentCamper">
+			<tr>
+				<th class="camperName">Camper Name Here</th>
+				<td class="foodList">Food here</td>
+				<td class="suppliesList">Supplies Here</td>
+			</tr>
 
+		</c:forEach>
+	</table>
 	<a class="home" href="index.jsp">Home</a>
 </body>
 </html>
