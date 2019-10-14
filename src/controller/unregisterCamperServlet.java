@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Camper;
+
 /**
  * Servlet implementation class unregisterCamperServlet
  */
@@ -42,7 +44,18 @@ public class unregisterCamperServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		UpdateHelper ch = new UpdateHelper();
+		
+		try {
+			Integer tempId = Integer.parseInt(request.getParameter("id"));
+			Camper camperToDelete = ch.searchByCamperId(tempId);
+						
+			ch.deleteCamper(camperToDelete);
+			
+		} catch (NumberFormatException e) {
+			System.out.println("Forgot to click a button");
+		} finally {
+			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		}	}
 
 }

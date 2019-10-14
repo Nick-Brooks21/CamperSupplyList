@@ -35,7 +35,7 @@ table, td {
 			</tr>
 			<c:forEach items="${requestScope.allCampers}" var="allCampers">
 			<tr>
-				<td><input type="radio" id="radioSelect" name="radio" /></td>
+				<td><input type="radio" name="id" value="${allCampers.id}"></td>
 				<td>${allCampers.id}</td>
 				<td>${allCampers.firstName}</td>
 				<td>${allCampers.lastName}</td>

@@ -33,7 +33,7 @@ table, td {
 			</tr>
 			<c:forEach items="${requestScope.allSupplies}" var="supply">
 			<tr>
-				<td><input type="radio" id="radioSelect" name="radio" /></td>
+				<td><input type="radio" name="id" value="${supply.id}"></td>
 				<td>${supply.id}</td>
 				<td>${supply.supplyItem}</td>
 				<td>${supply.quantity}</td>

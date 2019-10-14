@@ -31,7 +31,7 @@ public class addFoodServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String food = request.getParameter("foodType");
 		String foodQTY = request.getParameter("foodQTY");
-		int quantity = Integer.parseInt(foodQTY);
+		Integer quantity = Integer.parseInt(foodQTY);
 		
 		Food f = new Food(food, quantity);
 		CreateCamperHelper cch = new CreateCamperHelper();
