@@ -31,7 +31,7 @@
 
 	<table>
 		<tr>
-			<td><a href="addCamperLink.jsp">Register Now!</a></td>
+			<td><a href="addCamper.jsp">Register Now!</a></td>
 		</tr>
 		<tr>
 			<td><a class="viewListLink" href="CurrentListServlet">View

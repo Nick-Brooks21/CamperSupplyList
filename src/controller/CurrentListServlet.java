@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Camper;
+import model.Food;
+import model.Supplies;
 
 /**
  * Servlet implementation class CurrentListServlet
@@ -32,12 +34,14 @@ public class CurrentListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		DistributeItemsHelper di = new DistributeItemsHelper();
 		// Creates a new supply list each time this method is called
-		di.DistributeItems();
 		CreateCamperHelper ch = new CreateCamperHelper();
 		List<Camper> campers = ch.getAllCampers();
+		List<Food> food = ch.showAllFood();
+		List<Supplies> supplies = ch.showAllSupplies();
 		request.setAttribute("campers", campers);
+		request.setAttribute("food", food);
+		request.setAttribute("supplies", supplies);
 		getServletContext().getRequestDispatcher("/currentList.jsp").forward(request, response);
 	}
 
