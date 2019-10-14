@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Delete Supplies</title>
 <style>
 body {
 	background-color: lightgray;
