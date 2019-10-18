@@ -15,10 +15,19 @@
 		color: green;
 	}
 </style>
+<script>
+function newColor() {
+	document.body.style.backgroundColor = "blue";
+
+}
+
+</script>
 </head>
 <body>
 
-<h2>Welcome to Camp Chippewa!</h2>
+<h2 id="text">Welcome to Camp Chippewa!</h2>
+
+<button onclick="newColor()">Change Background Color</button>
 
 	<form action = "addCamperServlet" method="post" >
 		<table>
